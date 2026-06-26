@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founders Hub — Startup Booster | Startup Geeks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #16335c;
+    --navy-dark: #0e2444;
+    --navy-light: #e8eef7;
+    --red: #f0473a;
+    --red-dark: #d63326;
+    --gray-bg: #f7f8fa;
+    --text: #1e2733;
+    --text-soft: #5b6677;
+    --border: #e3e7ee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--gray-bg);
+    color: var(--text);
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: #fff;
+    padding: 64px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '🚀';
+    position: absolute;
+    font-size: 150px;
+    opacity: 0.06;
+    right: 8px; bottom: -34px;
+    transform: rotate(18deg);
+    line-height: 1;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px;
+    letter-spacing: 0.02em; margin-bottom: 36px; opacity: 0.95;
+  }
+  .hero-logo .rocket { font-size: 18px; }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(240,71,58,0.18);
+    color: #ff9d8f;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(240,71,58,0.35);
+  }
+  .hero h1 {
+    font-size: 40px; font-weight: 800; line-height: 1.12;
+    margin-bottom: 16px; max-width: 620px;
+  }
+  .hero p.lead {
+    font-size: 17px; color: #c7d2e3; max-width: 560px; font-weight: 400;
+  }
+
+  /* ===== HUB GRID ===== */
+  .hub {
+    flex: 1;
+    padding: 48px 0 8px;
+  }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .hub-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px 30px 26px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+  }
+  .hub-card:hover {
+    border-color: var(--red);
+    box-shadow: 0 12px 30px rgba(22,51,92,0.10);
+    transform: translateY(-3px);
+  }
+  .hub-card:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+  }
+  .hub-icon {
+    width: 54px; height: 54px;
+    background: var(--navy-light);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 25px; margin-bottom: 18px;
+    transition: background 0.18s;
+  }
+  .hub-card:hover .hub-icon { background: #fff0ee; }
+  .hub-card h3 {
+    font-size: 19px; font-weight: 700; color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .hub-card p {
+    font-size: 14.5px; color: var(--text-soft);
+    margin-bottom: 22px; line-height: 1.6;
+  }
+  .hub-arrow {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--red-dark); font-weight: 700; font-size: 14px;
+  }
+  .hub-arrow .arr {
+    display: inline-block;
+    transition: transform 0.18s;
+  }
+  .hub-card:hover .hub-arrow .arr { transform: translateX(5px); }
+
+  /* ===== HELPER NOTE ===== */
+  .hub-note {
+    margin: 36px 0 8px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-soft);
+  }
+  .hub-note strong { color: var(--navy); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-dark);
+    color: #8a9bb8;
+    text-align: center;
+    padding: 26px 0;
+    font-size: 12.5px;
+    margin-top: 48px;
+  }
+
+  @media (max-width: 720px) {
+    .hero { padding: 52px 0 50px; }
+    .hero h1 { font-size: 30px; }
+    .hub-grid { grid-template-columns: 1fr; }
+    .hub { padding: 36px 0 4px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hub-card, .hub-icon, .hub-arrow .arr { transition: none; }
+    .hub-card:hover { transform: none; }
+    .hub-card:hover .hub-arrow .arr { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-logo"><span class="rocket">🚀</span> STARTUP GEEKS</div>
+    <span class="hero-tag">Startup Booster</span>
+    <h1>Founders Hub</h1>
+    <p class="lead">Il tuo percorso a portata di clic: tutti i link e le risorse utili dello Startup Booster, raccolti in un unico posto.</p>
+  </div>
+</section>
+
+<!-- ================= HUB GRID ================= -->
+<section class="hub">
+  <div class="wrap">
+    <div class="hub-grid">
+
+      <!-- Survival Guide -->
+      <a class="hub-card" href="https://startupbooster1.github.io/survivalguide/" target="_blank" rel="noopener">
+        <div class="hub-icon">📖</div>
+        <h3>Survival Guide</h3>
+        <p>Tutto quello che devi sapere sul percorso: community, piattaforma, aree di lavoro e le persone che troverai al tuo fianco.</p>
+        <span class="hub-arrow">Apri la guida <span class="arr">→</span></span>
+      </a>
+
+      <!-- Piattaforma -->
+      <a class="hub-card" href="https://app.startupgeeks.it/" target="_blank" rel="noopener">
+        <div class="hub-icon">💻</div>
+        <h3>Piattaforma</h3>
+        <p>I contenuti formativi a supporto del tuo percorso consulenziale, sempre disponibili quando ti servono.</p>
+        <span class="hub-arrow">Vai alla piattaforma <span class="arr">→</span></span>
+      </a>
+
+      <!-- Community -->
+      <a class="hub-card" href="https://community.startupgeeks.it/home" target="_blank" rel="noopener">
+        <div class="hub-icon">💬</div>
+        <h3>Community</h3>
+        <p>Entra nel Club degli Imprenditori: networking, contatti e confronto libero con gli altri founder.</p>
+        <span class="hub-arrow">Entra nella community <span class="arr">→</span></span>
+      </a>
+
+      <!-- Eventi & Webinar -->
+      <a class="hub-card" href="https://airtable.com/appmyI6WxH0olBxHn/shr8cdGUwXZ4VpwhC" target="_blank" rel="noopener">
+        <div class="hub-icon">📅</div>
+        <h3>Eventi &amp; Webinar</h3>
+        <p>Il calendario completo delle sessioni live di Startup Geeks: titolo, orario e link Google Meet per partecipare.</p>
+        <span class="hub-arrow">Vedi il calendario <span class="arr">→</span></span>
+      </a>
+
+    </div>
+
+    <p class="hub-note">Per qualsiasi dubbio, il tuo <strong>Startup Consultant</strong> resta sempre il tuo punto di riferimento.</p>
+  </div>
+</section>
+
+<footer>
+  Startup Geeks S.r.l. SB · startupgeeks.it
+</footer>
+
+</body>
+</html>
